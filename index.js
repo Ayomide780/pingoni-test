@@ -20,6 +20,18 @@ app.get("/crash", (req, res) => {
   throw new Error("This is a test error");
 });
 
+app.get("/fail1", (req, res) => {
+  res.status(500).send("Server error");
+});
+
+app.get("/fail2", (req, res) => {
+  res.status(500).send("Server error");
+});
+
+app.get("/fail3", (req, res) => {
+  res.status(500).send("Server error");
+});
+
 app.get("/slow", async (req, res) => {
   await new Promise(r => setTimeout(r, 2000));
   res.send("That took a while");
