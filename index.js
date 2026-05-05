@@ -1,5 +1,5 @@
 const express = require("express");
-const pingoni = require("./pingoni-local");
+const pingoni = require("pingoni");
 
 const app = express();
 
