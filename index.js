@@ -4,8 +4,7 @@ const pingoni = require("pingoni");
 const app = express();
 
 // Replace this with your real Pingoni API key
-const API_KEY = "pgn_243772bf77c7316fd93fc682d2f9d7446994e39d72854045";
-
+const API_KEY = process.env.PINGONI_API_KEY;
 app.use(pingoni(API_KEY));
 
 app.get("/", (req, res) => {
