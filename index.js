@@ -1,5 +1,5 @@
 const express = require("express");
-const pingoni = require("pingoni");
+const pingoni = require("./pingoni-local");
 
 const app = express();
 
@@ -37,5 +37,6 @@ app.get("/slow", async (req, res) => {
   res.send("That took a while");
 });
 
+app.use(pingoni.errorHandler(API_KEY));
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Running on port ${PORT}`));
